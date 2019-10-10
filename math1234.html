@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 số phép tính cơ bản</title>
+</head>
+<body>
+<form action="">
+    <input type="text" value="" id="num"><br><br>
+    <button type="button" onclick="square()">Bình phương</button>
+    <button type="button" onclick="circle()">Diện tích, chu vi tròn</button>
+    <button type="button" onclick="factorial()">Giai thừa</button>
+    <button type="button" onclick="number()">Kiểm tra kí tự số</button>
+    <br><br>
+    <div id="result"></div>
+    <script>
+        function square(){
+            let num = Number(document.getElementById("num").value);
+            let reslt = num*num;
+            document.getElementById("result").innerHTML="Bình phương của "+num+" là "+reslt;
+        }
+        function circle(){
+            let r = Number(document.getElementById("num").value);
+            let s = r*r*Math.PI;
+            let c = r*2*Math.PI;
+            document.getElementById("result").innerHTML="Chu vi của đường tròn có bán kính "+r+" là "+c+"<br>"+"Diện tích của đường tròn có bán kính "+r+" là "+s;
+        }
+        
+        function factorial() {
+            let n = Number(document.getElementById("num").value);
+            let mul =1;
+            for (i=1;i<=n;i++){
+                mul *= i;
+            }
+            document.getElementById("result").innerHTML="Giai thừa của "+n+" là "+mul;
+        }
+        function number() {
+            let num = Number(document.getElementById("num").value);
+            alert(Number.isNaN(num))
+            if (Number.isNaN(num)==true){
+                document.getElementById("result").innerHTML=document.getElementById("num").value+" Không phải ký tự số";
+            }else {
+                document.getElementById("result").innerHTML=num+" là ký tự số";
+            }
+        }
+    </script>
+</form>
+</body>
+</html>

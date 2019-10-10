@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ 2 số nguyên</title>
+</head>
+<body>
+<script>
+    function change() {
+        let arr=[];
+        arr[0] = Number(prompt("Nhập số thứ 1"));
+        arr[1] = Number(prompt("Nhập số thứ 2"));
+        let first = 0;
+        let last = arr.length-1;
+        let temp;
+        while (first<=last){
+            temp=arr[first];
+            arr[first]=arr[last];
+            arr[last]=temp;
+            first++;
+            last--;
+        }
+        alert(arr);
+    }
+
+    change();
+</script>
+</body>
+</html>
